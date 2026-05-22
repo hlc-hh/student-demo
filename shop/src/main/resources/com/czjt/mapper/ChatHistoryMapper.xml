@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.czjt.mapper.ChatHistoryMapper">
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO chat_history (session_id, user_id, message, response, created_at)
+        VALUES (#{sessionId}, #{userId}, #{message}, #{response}, NOW())
+    </insert>
+
+    <select id="findBySessionId" resultType="com.czjt.pojo.ChatHistory">
+        SELECT * FROM chat_history
+        WHERE session_id = #{sessionId}
+        ORDER BY created_at ASC
+    </select>
+
+    <select id="findByUserId" resultType="com.czjt.pojo.ChatHistory">
+        SELECT * FROM chat_history
+        WHERE user_id = #{userId}
+        ORDER BY created_at DESC
+    </select>
+</mapper>

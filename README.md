@@ -12,7 +12,7 @@ JDK 版本：Java 11 或 Java 17（推荐 LTS 版本）
 bash
 运行
 # 1. 克隆代码仓库（替换为实际仓库地址）
-git clone https://github.com/你的用户名/shop.git
+git clone https://github.com/hlc-hh/shop.git
 cd shop
 
 # 2. 编译项目（跳过测试，首次构建更快）
